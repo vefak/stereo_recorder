@@ -1,0 +1,3 @@
+/home/vefak/Desktop/stereodetection_backup/CMakeFiles/rebuild_cache.dir
+/home/vefak/Desktop/stereodetection_backup/CMakeFiles/stereo_alpha_rt.dir
+/home/vefak/Desktop/stereodetection_backup/CMakeFiles/edit_cache.dir

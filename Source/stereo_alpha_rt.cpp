@@ -1,9 +1,6 @@
 #include "Bumblebee_RT.h"
 
 
-#include "ros/ros.h"
-#include "std_msgs/String.h"
-#include <sstream>
 
 Mat convertTriclops2OpencvMat(TriclopsImage16& disparityImage);
 Mat convertTriclops2OpencvMat(TriclopsImage& inputImage);
@@ -31,35 +28,35 @@ std::string Global_LeftIMG_Dir, Global_RightIMG_Dir, Global_DisparityIMG_Dir, Gl
 std::string seq = "ofis_test";
 
 
-int main(int argc, char **argv)
+int main()
 {
-	//vefak
-	ros::init(argc, argv, "stereorecorder_node");
-	ros::NodeHandle n;
-	ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-	int count = 5;
-	ros::Rate loop_rate(10);
 	bool useOfflineCode = false;
 	clock_t t_start, t_end;
 	double diff_disparity;
 
-
-
-	
+	if (useOfflineCode)
+	{
+		getchar();
+		return 0;
+	}
+	else
+	{
 		TriclopsError triclops_status;
 		TriclopsContext context;
 		TriclopsMonoStereoPair monoStereoPair;
 
+
 		bool saveImages = true;
 		bool saveRawImages = true;
 		bool saveRectifiedImages = true;
+		bool saveDisparityImage = false;
+		bool saveOpenCVDisparityImage = false;
 		bool showImages = false;
 
+		if (saveRawImages || saveRectifiedImages || saveDisparityImage || saveOpenCVDisparityImage)
+			saveImages = true;
 
-		std::string fname_image_left, fname_image_right;
-		std::string fname_image_left_rectified, fname_image_right_rectified;
-		std::string fname_image_disparity, fname_opencv_image_disparity;
-		std::string fname_timestamp;
+		std::string fname_image_left, fname_image_right, fname_image_left_rectified, fname_image_right_rectified, fname_image_disparity, fname_opencv_image_disparity, fname_timestamp;
 		int recordTimeInSeconds = 60;
 
 		bool wideMode = true;
@@ -104,7 +101,7 @@ int main(int argc, char **argv)
 		FC2::CameraInfo camInfo;
 		FC2::Error fc2Error = camera.GetCameraInfo(&camInfo);
 		fc2TriclopsError = FC2T::getContextFromCamera(camInfo.serialNumber, &context);
-		
+
 
 		//triclopsGetResolution(context, &nrows, &ncols);
 		newcols = bumblebeeObject->outputWidth;
@@ -119,7 +116,18 @@ int main(int argc, char **argv)
 		int w = round(newcols / 4);
 		int h = round(newrows / 4);
 
-	
+		if (showImages)
+		{
+			/// Create windows
+			namedWindow("Left Image Rectified", CV_WINDOW_NORMAL);
+			resizeWindow("Left Image Rectified", w, h);
+			cv::moveWindow("Left Image Rectified", 10, 50);
+
+			namedWindow("Disparity Image", CV_WINDOW_NORMAL);
+			resizeWindow("Disparity Image", newcols, newrows);
+			cv::moveWindow("Disparity Image", w + 250, 50);			
+
+		}
 
 		std::cout << "Start Capture" << std::endl;
 		fc2Error = camera.StartCapture();
@@ -184,8 +192,7 @@ int main(int argc, char **argv)
 
 		t_start = 0.0;
 		t_end = 0.0;
-		//vefak
-		while ( (ros::ok()) && (strcmp(err.c_str(), "Ok.") == 0) /*&& diff_disparity <= recordTimeInSeconds * 1000*/)
+		while (strcmp(err.c_str(), "Ok.") == 0 /*&& diff_disparity <= recordTimeInSeconds * 1000*/)
 		{
 			diff_disparity = (static_cast<float>(t_end) - static_cast<float>(t_start)) / 1000;
 			
@@ -266,6 +273,12 @@ int main(int argc, char **argv)
 				
 			}
 
+			if (saveDisparityImage)
+			{
+				triclopsSaveImage16(&imageDisparity16, fname_image_disparity.c_str());
+				///home/vefak/SANCAKTEPE_TEST_wide_res1280X960_64bit_19b/disp000000079.pgm
+			}
+
 			cv::Mat imageDisparityMat = convertTriclops2OpencvMat(imageDisparity16);
 
 			double ratio = 1. / 16.;
@@ -274,7 +287,12 @@ int main(int argc, char **argv)
 			imageDisparityMat.convertTo(imgDisparity8U, CV_8UC1, ratio);
 			imageDisparityMat.convertTo(imgDisparity32F, CV_32FC1, ratio);
 
-		
+			if (saveOpenCVDisparityImage)
+			{
+				imwrite(fname_opencv_image_disparity, imgDisparity8U);
+				//home/vefak/SANCAKTEPE_TEST_wide_res1280X960_64bit_19b/disp_opencv000000079.pgm
+			}
+
 			float baseline, focallength, centerRow, centerCol;
 			triclops_status = triclopsGetBaseline(context, &baseline);
 			triclops_status = triclopsGetFocalLength(context, &focallength);//The focal length is in 'pixels' for the current selected output resolution. All cameras' rectified images have the same focal length
@@ -282,11 +300,12 @@ int main(int argc, char **argv)
 
 			if (showImages)
 			{
-				
+				imshow("Disparity Image", imgDisparity8U);
 				imshow("Left Image Rectified", imageLeft_Rectified);
-				imshow("Right Image Rectified", imageRight_Rectified);
-				imshow("Left Image", imageLeft);
-				imshow("Right Image", imageRight);
+				//imshow("Left Image Rectified", imageLeft_Rectified);
+				//imshow("Right Image Rectified", imageRight_Rectified);
+				//imshow("Left Image", imageLeft);
+				//imshow("Right Image", imageRight);
 				waitKey(1);
 			}
 
@@ -294,21 +313,6 @@ int main(int argc, char **argv)
 			t_end = clock();
 
 			///// Clock End
-
-			//vefak
-			std_msgs::String msg;
-			std::stringstream ss;
-    		ss << "hello world " << count;
-			count = count +1;
-   			msg.data = ss.str();
-  
-   			ROS_INFO("%s", msg.data.c_str());
-			chatter_pub.publish(msg);
-  
-      		ros::spinOnce();
-  
-    		loop_rate.sleep();
-      		
 		}
 
 		mytimestampfile.close();
@@ -321,17 +325,14 @@ int main(int argc, char **argv)
 		
 
 		std::cout << "Closed" << std::endl;
-
+	}
 	
+
+
 
 	getchar();
     return 0;
 }
-
-
-
-
-
 
 // convert a triclopsImage mono image to opencv mat
 Mat convertTriclops2OpencvMat(TriclopsImage& disparityImage)
