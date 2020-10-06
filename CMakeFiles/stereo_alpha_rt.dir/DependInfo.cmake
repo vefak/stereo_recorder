@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/vefak/Desktop/stereodetection_backup/Source/stereo_alpha_rt.cpp" "/home/vefak/Desktop/stereodetection_backup/CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o"
-  "/home/vefak/Desktop/stereodetection_backup/Source/stereocore_rt.cpp" "/home/vefak/Desktop/stereodetection_backup/CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o"
+  "/home/vefak/Desktop/stereo_recorder/Source/stereo_alpha_rt.cpp" "/home/vefak/Desktop/stereo_recorder/CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o"
+  "/home/vefak/Desktop/stereo_recorder/Source/stereocore_rt.cpp" "/home/vefak/Desktop/stereo_recorder/CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

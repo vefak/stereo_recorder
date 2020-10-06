@@ -25,7 +25,7 @@ enum IMAGE_SIDE
 
 const std::string img_root_dir = "/home/vefak/Desktop";
 std::string Global_LeftIMG_Dir, Global_RightIMG_Dir, Global_DisparityIMG_Dir, Global_OpenCVDisparityIMG_Dir;
-std::string seq = "ofis_test";
+std::string seq = "vefak_home";
 
 
 int main()
@@ -51,7 +51,7 @@ int main()
 		bool saveRectifiedImages = true;
 		bool saveDisparityImage = false;
 		bool saveOpenCVDisparityImage = false;
-		bool showImages = false;
+		bool showImages = true;
 
 		if (saveRawImages || saveRectifiedImages || saveDisparityImage || saveOpenCVDisparityImage)
 			saveImages = true;
@@ -306,9 +306,8 @@ int main()
 				//imshow("Right Image Rectified", imageRight_Rectified);
 				//imshow("Left Image", imageLeft);
 				//imshow("Right Image", imageRight);
-				waitKey(1);
+				waitKey(1000);
 			}
-
 
 			t_end = clock();
 
@@ -322,8 +321,6 @@ int main()
 
 		// Destroy the Triclops context
 		triclops_status = triclopsDestroyContext(context);
-		
-
 		std::cout << "Closed" << std::endl;
 	}
 	
@@ -333,6 +330,19 @@ int main()
 	getchar();
     return 0;
 }
+
+
+/*
+
+
+///////////////////////////////////////
+//////////////////////////////////////
+
+
+
+
+
+*/
 
 // convert a triclopsImage mono image to opencv mat
 Mat convertTriclops2OpencvMat(TriclopsImage& disparityImage)

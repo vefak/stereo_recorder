@@ -1,4 +1,4 @@
-# Install script for directory: /home/vefak/Desktop/stereodetection_backup
+# Install script for directory: /home/vefak/Desktop/stereo_recorder
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vefak/Desktop/stereodetection_backup/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vefak/Desktop/stereo_recorder/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

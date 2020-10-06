@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/vefak/Desktop/stereodetection_backup/Source/stereo_alpha_rt.cpp
+/home/vefak/Desktop/stereo_recorder/Source/stereo_alpha_rt.cpp
 Bumblebee_RT.h
-/home/vefak/Desktop/stereodetection_backup/Source/Bumblebee_RT.h
+/home/vefak/Desktop/stereo_recorder/Source/Bumblebee_RT.h
 
-/home/vefak/Desktop/stereodetection_backup/Source/stereocore_rt.cpp
+/home/vefak/Desktop/stereo_recorder/Source/stereocore_rt.cpp
 stereocore_RT.h
-/home/vefak/Desktop/stereodetection_backup/Source/stereocore_RT.h
+/home/vefak/Desktop/stereo_recorder/Source/stereocore_RT.h
 
 /usr/include/flycapture/AVIRecorder.h
 FlyCapture2Platform.h

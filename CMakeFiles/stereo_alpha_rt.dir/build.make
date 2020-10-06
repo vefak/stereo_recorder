@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vefak/Desktop/stereodetection_backup
+CMAKE_SOURCE_DIR = /home/vefak/Desktop/stereo_recorder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vefak/Desktop/stereodetection_backup
+CMAKE_BINARY_DIR = /home/vefak/Desktop/stereo_recorder
 
 # Include any dependencies generated for this target.
 include CMakeFiles/stereo_alpha_rt.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/stereo_alpha_rt.dir/flags.make
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o: CMakeFiles/stereo_alpha_rt.dir/flags.make
 CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o: Source/stereo_alpha_rt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vefak/Desktop/stereodetection_backup/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o -c /home/vefak/Desktop/stereodetection_backup/Source/stereo_alpha_rt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vefak/Desktop/stereo_recorder/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o -c /home/vefak/Desktop/stereo_recorder/Source/stereo_alpha_rt.cpp
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vefak/Desktop/stereodetection_backup/Source/stereo_alpha_rt.cpp > CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vefak/Desktop/stereo_recorder/Source/stereo_alpha_rt.cpp > CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.i
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vefak/Desktop/stereodetection_backup/Source/stereo_alpha_rt.cpp -o CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vefak/Desktop/stereo_recorder/Source/stereo_alpha_rt.cpp -o CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.s
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/stereo_alpha_rt.dir/Source/stereo_alpha_rt.cpp.o.provides.build: CMak
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o: CMakeFiles/stereo_alpha_rt.dir/flags.make
 CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o: Source/stereocore_rt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vefak/Desktop/stereodetection_backup/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o -c /home/vefak/Desktop/stereodetection_backup/Source/stereocore_rt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vefak/Desktop/stereo_recorder/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o -c /home/vefak/Desktop/stereo_recorder/Source/stereocore_rt.cpp
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vefak/Desktop/stereodetection_backup/Source/stereocore_rt.cpp > CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vefak/Desktop/stereo_recorder/Source/stereocore_rt.cpp > CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.i
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vefak/Desktop/stereodetection_backup/Source/stereocore_rt.cpp -o CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vefak/Desktop/stereo_recorder/Source/stereocore_rt.cpp -o CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.s
 
 CMakeFiles/stereo_alpha_rt.dir/Source/stereocore_rt.cpp.o.requires:
 
@@ -152,7 +152,7 @@ stereo_alpha_rt: /usr/local/lib/libopencv_imgcodecs.so.3.4.11
 stereo_alpha_rt: /usr/local/lib/libopencv_imgproc.so.3.4.11
 stereo_alpha_rt: /usr/local/lib/libopencv_core.so.3.4.11
 stereo_alpha_rt: CMakeFiles/stereo_alpha_rt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vefak/Desktop/stereodetection_backup/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable stereo_alpha_rt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vefak/Desktop/stereo_recorder/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable stereo_alpha_rt"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stereo_alpha_rt.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/stereo_alpha_rt.dir/clean:
 .PHONY : CMakeFiles/stereo_alpha_rt.dir/clean
 
 CMakeFiles/stereo_alpha_rt.dir/depend:
-	cd /home/vefak/Desktop/stereodetection_backup && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vefak/Desktop/stereodetection_backup /home/vefak/Desktop/stereodetection_backup /home/vefak/Desktop/stereodetection_backup /home/vefak/Desktop/stereodetection_backup /home/vefak/Desktop/stereodetection_backup/CMakeFiles/stereo_alpha_rt.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/vefak/Desktop/stereo_recorder && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vefak/Desktop/stereo_recorder /home/vefak/Desktop/stereo_recorder /home/vefak/Desktop/stereo_recorder /home/vefak/Desktop/stereo_recorder /home/vefak/Desktop/stereo_recorder/CMakeFiles/stereo_alpha_rt.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/stereo_alpha_rt.dir/depend
 
